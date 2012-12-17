@@ -23,14 +23,20 @@ object LazyEvaluation extends App {
 
   val fibs: Stream[BigInt] = BigInt(0) #:: BigInt(1) #:: fibs.zip(fibs.tail).map(n => n._1 + n._2)
 
-  def fibunacci(n: Int) = fibs.take(n).foreach(println)
+  def fibunacci = {
+
+    def fibunacci(n: Int) = fibs.take(n).foreach(println)
+
+    fibs.take(10).foreach(println)
+
+    println("lazy evaluated : " + fibs.take(100))
+    println("forced : " + fibs.take(100).force)
+    println("just the result : " + fibs.take(100).force.last)
+
+  }
 
   trivial
 
-  fibs.take(10).foreach(println)
-  
-  println("lazy evaluated : " + fibs.take(100))
-  println("forced : " + fibs.take(100).force)
-  println("just the result : " + fibs.take(100).force.last)
+  fibunacci
 
 }
