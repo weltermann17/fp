@@ -1,0 +1,10 @@
+package com.ibm.fp
+
+object LambdaCalculus extends App {
+
+  def λ = {
+    println("λ")
+  }
+
+  λ
+}

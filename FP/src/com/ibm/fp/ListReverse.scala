@@ -4,7 +4,7 @@ object ListReverse extends App {
 
   val a = "A" :: "B" :: "C" :: Nil
   val b = List("A", "B", "C")
-  
+
   println(a == b)
 
   def reverse[A](list: List[A]): List[A] = list match {

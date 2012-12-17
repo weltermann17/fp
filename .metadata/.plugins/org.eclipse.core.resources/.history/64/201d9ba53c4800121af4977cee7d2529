@@ -1,0 +1,21 @@
+package com.ibm.fp
+
+object HigherOrderFunctions extends App {
+
+  def currency(rate: Double, in: Double) = (math rint (in * rate * 100)) / 100
+
+  def c = currency _ curried
+
+  def euro2dollar = c(1.0 / 0.75954)
+
+  def euro2pound = c(1.0 / 1.22856)
+
+  def dollar2euro = c(1.0 / 0.75954)
+
+  def pound2euro = c(1.0 / 1.22856)
+
+  def pound2dollar = euro2dollar(pound2euro _)
+
+  println(euro2dollar(1.00))
+
+}

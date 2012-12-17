@@ -1,0 +1,8 @@
+package com.ibm.fp
+
+object LambdaCalculus extends App {
+
+  def λ(b: Unit) = new Thread(new Runnable { def run = b }).start
+
+  λ
+}

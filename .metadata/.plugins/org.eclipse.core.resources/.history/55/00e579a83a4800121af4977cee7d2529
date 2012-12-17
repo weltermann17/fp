@@ -1,0 +1,11 @@
+package com.ibm.fp
+
+object HigherOrderFunctions extends App {
+
+  def mult(a: Int, b: Int): Int = a * b
+  
+  def m = curry mult
+
+  println(mult(4, 3))
+
+}
