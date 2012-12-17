@@ -1,9 +1,0 @@
-package com.ibm.fp.scala
-
-object HigherAbstraction extends App {
-
-  val input = ""
-
-  input.split("\n").sorted.mkString("\n")
-
-}
