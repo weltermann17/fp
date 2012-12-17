@@ -1,0 +1,10 @@
+package com.ibm.fp.scala
+
+object HigherAbstraction extends App {
+
+  val input = ""
+
+  println(input)
+  println(input.split("\n").sorted.mkString("\n"))
+
+}

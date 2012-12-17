@@ -1,0 +1,15 @@
+package com.ibm.fp.scala
+
+object PatternMatching extends App {
+
+  sealed trait Expression
+
+  sealed trait UnaryExpression extends Expression { val unary: Expression }
+
+  sealed trait BinaryExpression extends Expression { val left: Expression; val right: Expression }
+
+  case class Not(unary: Expression) extends UnaryExpression
+
+  println()
+
+}
