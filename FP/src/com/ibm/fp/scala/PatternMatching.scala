@@ -28,7 +28,7 @@ object PatternMatching extends App {
 
   val a = Not(And(True, Not(Or(False, True))))
 
-  println("a =" + a)
+  println("a = " + a)
   println("eval(a) = " + eval(a))
 
 }
