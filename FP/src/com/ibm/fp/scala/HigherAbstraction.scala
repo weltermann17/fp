@@ -2,6 +2,8 @@ package com.ibm.fp.scala
 
 object HigherAbstraction extends App {
 
+  println(input.split("\n").sorted.mkString("\n"))
+  
   val input = """Ascension
 British Indian Ocean Territory
 Tokelau
@@ -251,7 +253,5 @@ Cocos (keeling) Islands
 Macao
 Micronesia, Federated States Of
 Neutrale Zone"""
-
-  println(input.split("\n").sorted.mkString("\n"))
 
 }
