@@ -1,6 +1,6 @@
 package com.ibm.fp.scala
 
-object Monade extends App {
+object Monads extends App {
 
   /*
    *  What defines a Monad?
@@ -18,18 +18,14 @@ object Monade extends App {
    * Another basic example
    */
 
-  case class MiniMonade[A](wert: A) {
-    def bind[B](f: A => MiniMonade[B]) = f(wert)
-  }
+  case class MiniMonade[A](wert: A) { def bind[B](f: A => MiniMonade[B]) = f(wert) }
 
   def plusEins(i: Int) = MiniMonade(i + 1)
 
   def alsString(a: Any) = MiniMonade(a.toString)
 
   val m1 = new MiniMonade(1)
-
   val m2 = m1 bind plusEins
-
   val m3 = m2 bind alsString
 
   println("m1 = " + m1);
@@ -49,12 +45,8 @@ object Monade extends App {
    */
 
   def eval(opt: Option[String]) = opt match {
-    case Some(value) =>
-      // Do something with the value
-      value.toUpperCase()
-    case None =>
-      // Use the default value, do nothing or whatever you want
-      "DEFAULT"
+    case Some(value) => value.toUpperCase // Do something with the value
+    case None => "DEFAULT" // Use the default value, do nothing or whatever you want
   }
 
   println(eval(Some("Parameter")))
@@ -65,6 +57,7 @@ object Monade extends App {
     val newOpt = (opt map { _.trim } filter { _.length != 0 } map { _.toUpperCase })
     newOpt.getOrElse("DEFAULT");
   }
-  
+
   println(monadEval(Some("OtherParameter")))
+
 }
